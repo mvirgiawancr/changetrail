@@ -4,6 +4,8 @@ When a rule changes, find every operational document that has to change with it,
 
 ChangeTrail is a local review workbench built on [Relate](https://relatedb.ai), Neo4j's embedded graph database. You import documents, confirm which clause depends on which, register a change to one clause, and then review the downstream clauses a person can see are affected. Every relationship in the graph was confirmed by a human and keeps the exact wording that justified it.
 
+![The review screen: an impact trace, the evidence path, and the decision form](docs/screen-review.png)
+
 ## Use case
 
 Operational documents are not independent. A policy states a deadline, an SOP points at the policy instead of restating it, a checklist says "follow the SOP", and a training slide repeats the old number. When the policy changes, the SOP may still be correct while the training slide is now wrong. A text search cannot tell those apart: it finds the documents that repeat the old number and misses the ones that reference it.
@@ -63,6 +65,8 @@ First result in five steps, in the order a reviewer works:
 5. **Hand off** (`/change/:id/report`). The same queue as a work list, grouped into what needs an edit, what is still open and what was ruled out, each item with its dependency path and the quote behind every link. `report.md` beside it serves the identical content as a downloadable Markdown file for a ticket or a pull request. Both are generated from one object, so the page and the file cannot disagree.
 
 Nothing reaches a review queue without a person: suggestions stay out of the graph, and the traversal only follows edges whose provenance is `manually-confirmed`.
+
+![The handoff report: what needs an edit, what is open, and the quote behind every link](docs/screen-report.png)
 
 Headless, without the interface:
 
