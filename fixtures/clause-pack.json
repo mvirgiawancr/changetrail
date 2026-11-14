@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo. Manually curated clause dependencies; not compliance advice.",
+  "clauses": [
+    {"id":"policy-deadline-v1","document":"policy","version":"1","text":"Notify the response lead within 72 hours."},
+    {"id":"policy-deadline-v2","document":"policy","version":"2","text":"Notify the response lead within 24 hours."},
+    {"id":"sop-notify","document":"sop","version":"1","text":"Apply the notification deadline in policy section 1."},
+    {"id":"sop-log","document":"sop","version":"1","text":"Record the recipient and time sent in the incident log."},
+    {"id":"checklist-notify","document":"checklist","version":"1","text":"Practice the notification deadline step in the SOP."},
+    {"id":"checklist-log","document":"logging-checklist","version":"1","text":"Check the recipient field required by the SOP logging step."},
+    {"id":"training-notify","document":"training","version":"1","text":"Following policy section 1, notify the response lead within 72 hours."},
+    {"id":"equipment-return","document":"equipment","version":"1","text":"Return equipment within 72 hours."}
+  ],
+  "dependencies": [
+    {"from":"sop-notify","to":"policy-deadline-v1","quote":"Apply the notification deadline in policy section 1."},
+    {"from":"checklist-notify","to":"sop-notify","quote":"Practice the notification deadline step in the SOP."},
+    {"from":"checklist-log","to":"sop-log","quote":"Check the recipient field required by the SOP logging step."},
+    {"from":"training-notify","to":"policy-deadline-v1","quote":"Following policy section 1, notify the response lead within 72 hours."}
+  ],
+  "changes": [
+    {"id":"deadline-24h","target":"policy-deadline-v1","replacement":"policy-deadline-v2","expected":["checklist-notify","sop-notify","training-notify"]},
+    {"id":"logging-review","target":"sop-log","replacement":null,"expected":["checklist-log"]},
+    {"id":"equipment-review","target":"equipment-return","replacement":null,"expected":[]},
+    {"id":"deadline-second-review","target":"policy-deadline-v1","replacement":null,"expected":["checklist-notify","sop-notify","training-notify"]}
+  ]
+}

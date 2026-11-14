@@ -1,0 +1,20 @@
+{
+  "notice": "Synthetic operational documents. Not legal or compliance advice. Relationships are manually curated, not AI-extracted.",
+  "documents": [
+    { "id": "notification-policy", "title": "Incident notification policy", "text": "Notify the response lead within 72 hours of confirming an incident." },
+    { "id": "response-sop", "title": "Response SOP", "text": "For incident notification, apply the notification-policy deadline: 72 hours. Log the time sent." },
+    { "id": "onboarding-checklist", "title": "Responder onboarding checklist", "text": "Practice the notification step in response-sop. Use the deadline specified there." },
+    { "id": "training", "title": "Responder training", "text": "Incident notifications must reach the response lead within 72 hours, as required by notification-policy." },
+    { "id": "equipment-returns", "title": "Equipment returns", "text": "Return replacement equipment within 72 hours. This equipment process is separate from incident notification." }
+  ],
+  "relationships": [
+    { "from": "response-sop", "to": "notification-policy", "quote": "For incident notification, apply the notification-policy deadline: 72 hours.", "status": "manually-confirmed" },
+    { "from": "onboarding-checklist", "to": "response-sop", "quote": "Practice the notification step in response-sop. Use the deadline specified there.", "status": "manually-confirmed" },
+    { "from": "training", "to": "notification-policy", "quote": "Incident notifications must reach the response lead within 72 hours, as required by notification-policy.", "status": "manually-confirmed" }
+  ],
+  "scenarios": [
+    { "id": "notification-deadline", "root": "notification-policy", "before": "72 hours", "after": "24 hours", "expected": ["response-sop", "onboarding-checklist", "training"] },
+    { "id": "sop-step-change", "root": "response-sop", "before": "Log the time sent", "after": "Log the time sent and the recipient", "expected": ["onboarding-checklist"] },
+    { "id": "equipment-deadline", "root": "equipment-returns", "before": "72 hours", "after": "48 hours", "expected": [] }
+  ]
+}

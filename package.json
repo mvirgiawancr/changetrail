@@ -1,0 +1,19 @@
+{
+  "name": "changetrail",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "spike": "node scripts/spike.mjs",
+    "clauses": "node scripts/clauses.mjs",
+    "docs": "node scripts/import.mjs",
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@relate/relate": "1.0.0"
+  }
+}

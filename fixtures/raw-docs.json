@@ -1,0 +1,35 @@
+{
+  "notice": "Synthetic demo documents. Paragraphs are split deterministically; dependency links are human-confirmed, never inferred.",
+  "documents": [
+    {
+      "documentId": "notification-policy",
+      "version": "1",
+      "text": "Incident notification policy. Notify the response lead within 72 hours of confirming an incident.\n\nThe response lead must acknowledge the notification and record the acknowledgement time."
+    },
+    {
+      "documentId": "notification-policy",
+      "version": "2",
+      "text": "Incident notification policy. Notify the response lead within 24 hours of confirming an incident.\n\nThe response lead must acknowledge the notification and record the acknowledgement time."
+    },
+    {
+      "documentId": "response-sop",
+      "version": "1",
+      "text": "Incident response standard operating procedure. For incident notification, follow the notification policy deadline and notify the response lead.\n\nRecord the recipient and time sent in the incident log.\n\nAfter the incident closes, schedule a retrospective with the response team."
+    },
+    {
+      "documentId": "onboarding-checklist",
+      "version": "1",
+      "text": "Responder onboarding checklist. Practice the incident notification step described in the standard operating procedure.\n\nConfirm the incident log includes the recipient and time sent."
+    },
+    {
+      "documentId": "responder-training",
+      "version": "1",
+      "text": "Responder training. When an incident is confirmed, notify the response lead within 72 hours."
+    },
+    {
+      "documentId": "equipment-returns",
+      "version": "1",
+      "text": "Equipment returns. Return replacement equipment within 72 hours of receipt.\n\nLog the return in the asset register."
+    }
+  ]
+}
