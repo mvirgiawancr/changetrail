@@ -104,6 +104,7 @@ All three are single-file Relate stores committed to this repo. They contain syn
 - Every returned dependency carries the exact quote that justified it, and a fabricated quote is rejected before anything is written.
 - Literal text search misses the indirect checklist and returns an unrelated 72-hour equipment process, while the graph does the opposite.
 - Two versions of one document are never suggested as a dependency: a version bump is a supersession, not an edge.
+- **A clean clone of this repository installs and passes all 35 tests**, then boots and serves every route. This was checked against the published repository, not the working copy.
 
 ## What this does not prove
 
